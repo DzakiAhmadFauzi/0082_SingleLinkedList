@@ -153,5 +153,47 @@ int main()
                  << "Data tidak ditemukan" << endl;
         else
             cout << endl
-                 << "Data dengan nomor mahasiswa " << nim << " berhasil dihapus" << endl;
+                 << "Data dengan nomor mahasiswa " << nim << " berhasil dihapus" << endl;       
 }
+        break;
+        case '3':
+        {
+            mhs.tranverse();
+        }
+        break;
+        case '4':
+        {
+            if (mhs.listEmpty() == true)
+            {
+                cout << endl
+                     << "List Kosong" << endl;
+                break;
+            }
+            Node *previous, *current;
+            cout << endl
+                 << "\nMasukkan no mahasiswa yang dicari : ";
+            cin >> nim;
+            if (mhs.Search(nim, &previous, &current) == false)
+                cout << endl
+                     << "Data tidak ditemukan" << endl;
+            else
+                cout << endl
+                     << "Data ditemukan" << endl
+                        << "\nNo Mahasiswa : " << current->noMhs << endl;
+                    cout << "\n";
+            }
+    }
+        break;
+        case '5':
+        {
+        }
+        break;
+        default:
+        {
+            cout << "Pilihan salah !." << endl;
+        }
+        break;
+        }
+    }while (ch != '5');
+}
+    
